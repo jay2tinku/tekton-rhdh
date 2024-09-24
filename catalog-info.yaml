@@ -2,14 +2,29 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: deploy-app-pipeline
-  description: OpenShift Pipeline
+  description: OpenShift Tekton Pipeline
+  annotations:
+    tekton.dev/pipelines: "backstage/deploy-app-pipeline"
+    backstage.io/techdocs-ref: url:https://your-docs-url/docs/architecture-diagram/
 spec:
-  type: service
+  type: ci-pipeline
   owner: dev-hub-team
   lifecycle: production
-  system: pipeline
+  system: devops-system
+  providesApis:
+    - tekton-pipeline
   ci:
-    - type: openshift
+    - type: tekton
       config:
         name: deploy-app-pipeline
         namespace: backstage
+  links:
+    - url: "https://console-openshift-console.apps.66a64ff6d70fa4001ee0caae.ocp.techzone.ibm.com/k8s/ns/backstage/tekton.dev~v1~Pipeline/deploy-app-pipeline"
+      title: "OpenShift Console Pipeline"
+      icon: docs
+    - url: "https://your-docs-url/docs/deploy-app-pipeline/"
+      title: "Pipeline Documentation"
+      icon: docs
+    - url: "https://tekton-dashboard-url/"
+      title: "Tekton Dashboard"
+      icon: tekton
