@@ -10,14 +10,10 @@ metadata:
     backstage.io/kubernetes-id: deploy-app-pipeline
     argocd/app-name: deploy-app-pipeline
   tags:
-    - spring-boot
-    - java
-    - maven
     - tekton
     - argocd
-    - renovate
     - sonarqube
 spec:
   type: service
-  owner: piomin
+  owner: dev-hub-team
   lifecycle: experimental
