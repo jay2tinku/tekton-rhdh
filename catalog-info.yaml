@@ -8,7 +8,7 @@ metadata:
     janus-idp.io/tekton: deploy-app-pipeline
     tektonci/build-namespace: backstage
     github.com/project-slug: jay2tinku/tekton-rhdh
-    backstage.io/kubernetes-id: deploy-app-pipeline
+    backstage.io/kubernetes-id: backstage
     argocd/app-name: deploy-app-pipeline
   tags:
     - tekton
