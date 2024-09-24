@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: deploy-app-pipeline
+  description: OpenShift Pipeline
+spec:
+  type: service
+  owner: dev-hub-team
+  lifecycle: production
+  system: pipeline
+  ci:
+    - type: openshift
+      config:
+        name: deploy-app-pipeline
+        namespace: backstage
