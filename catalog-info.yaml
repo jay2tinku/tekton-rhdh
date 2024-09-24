@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: deploy-app-pipeline
+  description: "openshift-pipeline"
   title: deploy-app-pipeline
   annotations:
     janus-idp.io/tekton: deploy-app-pipeline
@@ -17,3 +18,4 @@ spec:
   type: service
   owner: dev-hub-team
   lifecycle: experimental
+  system: Pipeline
